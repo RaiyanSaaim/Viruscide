@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
 
 [node name="Fuel" type="Area2D" unique_id=1897736259]
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_njvwi")
