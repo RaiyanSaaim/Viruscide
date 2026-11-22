@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dbi67sumx64wc"]
 
-[ext_resource type="Script" uid="uid://blkh3i6uvuv1l" path="res://diebreaker/3d_elements/dicemover.gd" id="1_nu77m"]
 [ext_resource type="Texture2D" uid="uid://cv0e84ydxe0ih" path="res://diebreaker/diebreaker_assets/boiiii.png" id="1_qyrtw"]
 [ext_resource type="PackedScene" uid="uid://u65cayjk7ai8" path="res://diebreaker/3d_elements/die.tscn" id="2_glcji"]
+[ext_resource type="Script" uid="uid://dkgvtrc77vdm" path="res://diebreaker/3d_elements/poop.gd" id="3_nu77m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_11mls"]
 friction = 0.0
@@ -20,10 +20,13 @@ size = Vector3(3, 15, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_q0t40"]
 
 [node name="Board" type="Node3D" unique_id=1830222422]
-script = ExtResource("1_nu77m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=91980891]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(1, -1.3902971e-08, -2.4080656e-08, 1.0908401e-08, 1, 2.9802322e-08, 7.450582e-09, -2.9802322e-08, 1, 0, 0, 6)
+light_color = Color(0.94967455, 0.1661571, 0.31391272, 1)
+light_energy = 3.0
+light_volumetric_fog_energy = 0.0
+light_angular_distance = 30.0
 shadow_enabled = true
 
 [node name="wall1" type="StaticBody3D" parent="." unique_id=981425332]
@@ -81,6 +84,7 @@ texture = ExtResource("1_qyrtw")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=959158549]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 projection = 1
-size = 20.0
+size = 15.0
 
 [node name="Die" parent="." unique_id=1229190084 instance=ExtResource("2_glcji")]
+script = ExtResource("3_nu77m")
