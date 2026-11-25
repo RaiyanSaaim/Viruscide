@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://u65cayjk7ai8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_glcji"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_17lfe"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_17lfe"]
+
+[node name="Die" type="RigidBody3D" unique_id=1229190084]
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_glcji")
+contact_monitor = true
+max_contacts_reported = 2
+linear_damp_mode = 1
+angular_damp_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1728469413]
+shape = SubResource("SphereShape3D_17lfe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1715133263]
+mesh = SubResource("BoxMesh_17lfe")
