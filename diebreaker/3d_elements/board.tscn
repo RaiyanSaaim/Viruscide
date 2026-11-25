@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dbi67sumx64wc"]
 
-[ext_resource type="Texture2D" uid="uid://cv0e84ydxe0ih" path="res://diebreaker/diebreaker_assets/boiiii.png" id="1_qyrtw"]
+[ext_resource type="Texture2D" path="res://diebreaker/diebreaker_assets/boiiii.png" id="1_qyrtw"]
 [ext_resource type="PackedScene" uid="uid://u65cayjk7ai8" path="res://diebreaker/3d_elements/die.tscn" id="2_glcji"]
-[ext_resource type="Script" uid="uid://dkgvtrc77vdm" path="res://diebreaker/3d_elements/poop.gd" id="3_nu77m"]
+[ext_resource type="Script" uid="uid://b4velytxdjhtp" path="res://diebreaker/3d_elements/movement_test.gd" id="3_nu77m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_11mls"]
 friction = 0.0
