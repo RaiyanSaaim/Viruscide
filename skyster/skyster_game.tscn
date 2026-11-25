@@ -3,8 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bvpm707i86drr" path="res://skyster/background/background.tscn" id="1_181da"]
 [ext_resource type="PackedScene" uid="uid://bilg2j7nfj6xs" path="res://skyster/player/skyster.tscn" id="1_snael"]
 [ext_resource type="Script" uid="uid://qchkppg7w02d" path="res://skyster/skyster_game.gd" id="1_x0uqv"]
+[ext_resource type="PackedScene" uid="uid://bpthqyik6ywrm" path="res://skyster/spawners/spawn_area.tscn" id="4_dtsi0"]
+[ext_resource type="PackedScene" uid="uid://dfsof722hj7b8" path="res://skyster/other_vehicles/truck.tscn" id="5_qm8vo"]
+[ext_resource type="PackedScene" uid="uid://bku070q460w15" path="res://skyster/other_vehicles/plane.tscn" id="6_qm8vo"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0es7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtsi0"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su2n2"]
+size = Vector2(1000, 450)
 
 [node name="SkysterGame" type="Node2D" unique_id=992286114]
 script = ExtResource("1_x0uqv")
@@ -28,9 +37,18 @@ offset_top = 15.0
 offset_right = 46.0
 offset_bottom = 42.0
 
-[node name="Timer" type="Timer" parent="." unique_id=556574099]
-wait_time = 3.0
-autostart = true
+[node name="Spawners" type="Node2D" parent="." unique_id=509595079]
+
+[node name="GroundSpawnArea" parent="Spawners" unique_id=1821630586 node_paths=PackedStringArray("player") instance=ExtResource("4_dtsi0")]
+position = Vector2(0, 210)
+player = NodePath("../../Skyster")
+vehicles = [ExtResource("5_qm8vo")]
+shape = SubResource("RectangleShape2D_dtsi0")
+
+[node name="SkySpawnArea" parent="Spawners" unique_id=469641173 node_paths=PackedStringArray("player") instance=ExtResource("4_dtsi0")]
+position = Vector2(0, -50)
+player = NodePath("../../Skyster")
+vehicles = [ExtResource("6_qm8vo")]
+shape = SubResource("RectangleShape2D_su2n2")
 
 [connection signal="fuel_changed" from="Skyster" to="." method="_on_skyster_fuel_changed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bpthqyik6ywrm"]
+
+[ext_resource type="Script" uid="uid://b1uda6urk2up2" path="res://skyster/spawners/spawn_area.gd" id="1_28jfj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
+size = Vector2(500, 500)
+
+[node name="SpawnArea" type="Area2D" unique_id=1821630586]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_28jfj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=101303710]
+shape = SubResource("RectangleShape2D_0es7p")
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1359709673]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
